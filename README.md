@@ -1,1 +1,1 @@
-# all_configs
+# dotfiles
