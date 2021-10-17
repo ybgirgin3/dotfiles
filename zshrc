@@ -9,7 +9,9 @@ export ZSH="/home/berkay/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="fishy"
+#ZSH_THEME="miloshadzic"
+ZSH_THEME="berkay"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -24,14 +26,13 @@ ZSH_THEME="fishy"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -46,8 +47,9 @@ ZSH_THEME="fishy"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -71,7 +73,10 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting themes)
+
+#ZSH_COLORIZE_TOOL=chroma
+#ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,41 +105,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-## >>> conda initialize >>>
+
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/berkay/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/berkay/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/berkay/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/berkay/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/berkay/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/berkay/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/berkay/miniconda3/bin:$PATH"
+        export PATH="/home/berkay/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# conda alias'
-alias fundir="cd /home/berkay/code/fun && conda activate development"
-alias fun="conda activate development"
-alias para="conda activate freelance"
-alias paradir="cd /home/berkay/code/freelance && conda activate freelance"
+alias paradir="cd /home/berkay/code"
+alias para="conda activate job"
+alias dev="conda activate dev"
 
-# os alias'
-alias update_all="apt list --upgradable && sudo apt update && sudo apt upgrade -y"
-#DISABLE_UNTRACKED_FILES_DIRTY="true"
-#
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export ANDROID_SDK=/home/berkay/Android/Sdk
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if [[ $TERM =~ konsole.* ]]; then
-    export FZF_DEFAULT_OPTS='--color fg+:5,hl+:6'
-fi
+# fnm
+export PATH=/home/berkay/.fnm:$PATH
+eval "`fnm env`"
