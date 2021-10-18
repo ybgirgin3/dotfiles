@@ -11,7 +11,8 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'vim-airline/vim-airline-themes'
   "Plug 'powerline/powerline'
 
 
@@ -44,16 +45,17 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - Popup window (center of the screen)
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " - Popup window (center of the current window)
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
 
 " - Popup window (anchored to the bottom of the current window)
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
 
 " - down / up / left / right
 let g:fzf_layout = { 'down': '40%' }
+"let g:fzf_layout = { 'down': '~40%' }
 
 " - Window using a Vim command
 let g:fzf_layout = { 'window': 'enew' }
