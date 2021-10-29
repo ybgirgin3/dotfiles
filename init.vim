@@ -12,50 +12,31 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'
-  Plug 'scrooloose/nerdcommenter'
   Plug 'itchyny/lightline.vim'
-  Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
+  Plug 'ap/vim-css-color'                            " Color previews for CSS
+  Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
 
   " themes
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'bluz71/vim-moonfly-colors'
+  Plug 'morhetz/gruvbox'
 
-
-
-
-
+  " syntax support
   Plug 'tomlion/vim-solidity'
 
+  " PRETTIER
   " post install (yarn install | npm install) then load plugin only for editing supported files
   Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
-
-
-  "Plug 'nvim-treesitter/nvim-treesitter'
-  "Plug 'nvim-treesitter/playground'
-
-
-
-  "Plug 'zchee/deoplete-jedi'
-  "Plug 'vim-airline/vim-airline-themes'
-  "Plug 'powerline/powerline'
-
-
-
 " Initialize plugin system
 call plug#end()
 
-
 " theme
-colorscheme codedark
-"colorscheme moonfly
+colorscheme gruvbox
 
-
-"set guicursor=i:block
+set guicursor=i:block
 set ignorecase
 set smartcase
 syntax on
