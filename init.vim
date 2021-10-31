@@ -14,12 +14,9 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'jiangmiao/auto-pairs'
   Plug 'itchyny/lightline.vim'
   Plug 'nvim-lua/plenary.nvim'
-  "Plug 'nvim-telescope/telescope.nvim'
-
 
   Plug 'ap/vim-css-color'                            " Color previews for CSS
   Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
-
 
   " themes
   Plug 'morhetz/gruvbox'
