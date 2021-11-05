@@ -70,9 +70,16 @@ sudo apt-get update -y && sudo apt-get install spotify-client -y
 
 
 # -- github cli run/login -> better with manually
-gh auth login
 
-echo "Manual Needed Apps: Discord, Zoom,"
+# zsh extention
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+echo "Manual Needed Apps: Discord, Zoom, Mega.nz"
+
+# github configuration
+git config --global user.email "ybgirgin3@gmail.com"
+git config --global user.name "ybgirgin3"
 
 # -- oh my zsh run
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
