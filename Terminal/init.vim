@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'
+  Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
   Plug 'nvim-lua/plenary.nvim'
 
@@ -22,7 +23,8 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'morhetz/gruvbox'
 
   " syntax support
-  Plug 'tomlion/vim-solidity'
+  Plug 'tomlion/vim-solidity'         " solidity
+  Plug 'epilande/vim-react-snippets'  " react
 
   " PRETTIER
   " post install (yarn install | npm install) then load plugin only for editing supported files
@@ -235,4 +237,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 "let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat = 1
+
+" indentline
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
