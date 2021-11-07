@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/autoload')
 
   " themes
   Plug 'morhetz/gruvbox'
+  Plug 'dracula/vim', { 'as': 'dracula' }
 
   " syntax support
   Plug 'tomlion/vim-solidity'         " solidity
@@ -36,9 +37,11 @@ call plug#begin('~/.config/nvim/autoload')
 call plug#end()
 
 " theme
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme dracula
+set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
 
-set guicursor=i:block
+" config
 set ignorecase
 set smartcase
 syntax on
