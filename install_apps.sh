@@ -65,9 +65,14 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update -y && sudo apt-get install spotify-client -y
 
+# -- songrec: shazam client for linux
+sudo apt-add-repository ppa:marin-m/songrec -y -u
+sudo apt install songrec -y
+songrec
+
+
 
 # TERMINAL APPS RUN
-
 
 # -- github cli run/login -> better with manually
 
