@@ -5,7 +5,7 @@
 ## Yusuf Berkay Girgin 31 October 2021 23:48
 
 
-# TERMINAL GOODIES w/o gui
+# *** TERMINAL GOODIES w/o gui
 sudo apt install software-properties-common apt-transport-https wget -y
 sudo apt remove vim -y          # remove old vim
 sudo apt install git -y
@@ -59,20 +59,16 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update -y
 sudo apt-get install sublime-text -y
 
-
 # --- spotify: for music
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update -y && sudo apt-get install spotify-client -y
 
-# -- songrec: shazam client for linux
+# --- songrec: shazam client for linux
 sudo apt-add-repository ppa:marin-m/songrec -y -u
 sudo apt install songrec -y
-songrec
 
-
-
-# TERMINAL APPS RUN
+# *** TERMINAL APPS RUN
 
 # -- github cli run/login -> better with manually
 
