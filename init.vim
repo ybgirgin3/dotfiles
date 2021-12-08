@@ -42,22 +42,33 @@ call plug#end()
 
 " theme
 "colorscheme gruvbox
-"colorscheme dracula
+colorscheme dracula
 set guicursor=n-v-c-i:block-Cursor
 
 " config
-set ignorecase
-set smartcase
 syntax on
-set tabstop=2
+set ignorecase
+set smarttab
+set smartcase
+filetype plugin indent on
 set shiftwidth=2
+set tabstop=2
 set expandtab
+set title
+set autoindent
 set ai
+set si
+set nowrap
 set number
 set hlsearch
 set ruler
-"set cursorline
+set cursorline
 highlight Comment ctermfg=green
+
+
+
+
+
 " NERDTREE
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
