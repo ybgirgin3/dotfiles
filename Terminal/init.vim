@@ -12,9 +12,11 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'
-  Plug 'Yggdroot/indentLine'
+  "Plug 'Yggdroot/indentLine'
   Plug 'itchyny/lightline.vim'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'ryanoasis/vim-devicons'         " icons for vim
+
 
   Plug 'ap/vim-css-color'                            " Color previews for CSS
   Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
@@ -27,33 +29,46 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'tomlion/vim-solidity'         " solidity
   Plug 'epilande/vim-react-snippets'  " react
 
-  " PRETTIER
   " post install (yarn install | npm install) then load plugin only for editing supported files
-  Plug 'prettier/vim-prettier', {
-    \ 'do': 'npm install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+  "Plug 'prettier/vim-prettier', {
+  "  \ 'do': 'yarn install --frozen-lockfile --production',
+  "  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
-" Initialize plugin system
+
+
+
+ " Initialize plugin system
 call plug#end()
 
 " theme
 "colorscheme gruvbox
 colorscheme dracula
-set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
+set guicursor=n-v-c-i:block-Cursor
 
 " config
-set ignorecase
-set smartcase
 syntax on
-set tabstop=2
+set ignorecase
+set smarttab
+set smartcase
+filetype plugin indent on
 set shiftwidth=2
+set tabstop=2
 set expandtab
+set title
+set autoindent
 set ai
+set si
+set nowrap
 set number
 set hlsearch
 set ruler
 set cursorline
 highlight Comment ctermfg=green
+
+
+
+
+
 " NERDTREE
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -239,8 +254,10 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "      \ }
 
 "let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat = 1
+"let g:prettier#autoformat = 1
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 
 " indentline
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
