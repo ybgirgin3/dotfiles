@@ -30,7 +30,7 @@ sudo apt install cmatrix -y      # for fun 🤟
 sudo apt install kdenlive -y               # video editing 📼
 # sudo apt install breeze                 # for having dark theme in kdenlive -> optional
 sudo apt install sqlitebrowser -y         # for sql dbs
-sudo apt install geary -y                  # emails 📬
+# sudo apt install geary -y                  # emails 📬 # no need in kde
 sudo apt install obs-studio -y             # screen recording 💻
 
 
@@ -45,6 +45,11 @@ sudo apt install gh -y
 # --- touchegg: for trackpad shortcuts
 sudo add-apt-repository ppa:touchegg/stable -y
 sudo apt install touchegg -y
+
+# --- fnm: light node version manager
+curl -fsSL https://fnm.vercel.app/install | bash
+
+
 
 # -- GUI APPS
 # --- vscode: 1st code editor
@@ -76,7 +81,6 @@ sudo apt install songrec -y
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-echo "Manual Needed Apps: Discord, Zoom, Mega.nz"
 
 # github configuration
 git config --global user.email "ybgirgin3@gmail.com"
@@ -84,3 +88,11 @@ git config --global user.name "ybgirgin3"
 
 # -- oh my zsh run
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+echo "Manual Needed Apps: Discord, Zoom, Mega.nz, xampp, miniconda for python 3.9"
+echo """
+manuel olarak çalıştırılması gereken komutlar:
+  fnm install <lts-version-node>
+  gh auth login
+"""
