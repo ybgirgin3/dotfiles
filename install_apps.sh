@@ -43,8 +43,8 @@ sudo apt update -y
 sudo apt install gh -y
 
 # --- touchegg: for trackpad shortcuts
-sudo add-apt-repository ppa:touchegg/stable -y
-sudo apt install touchegg -y
+#sudo add-apt-repository ppa:touchegg/stable -y
+#sudo apt install touchegg -y
 
 # --- fnm: light node version manager
 curl -fsSL https://fnm.vercel.app/install | bash
