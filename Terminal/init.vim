@@ -41,8 +41,8 @@ call plug#begin('~/.config/nvim/autoload')
 call plug#end()
 
 " theme
-"colorscheme gruvbox
-colorscheme dracula
+colorscheme gruvbox
+"colorscheme dracula
 set guicursor=n-v-c-i:block-Cursor
 
 " config
@@ -58,7 +58,7 @@ set title
 set autoindent
 set ai
 set si
-set nowrap
+"set nowrap
 set number
 set hlsearch
 set ruler
