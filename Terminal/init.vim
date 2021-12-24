@@ -21,9 +21,12 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'ap/vim-css-color'                            " Color previews for CSS
   Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
+
+  Plug 'pangloss/vim-javascript'
+
   " themes
-  Plug 'morhetz/gruvbox'
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  " Plug 'morhetz/gruvbox'
+  Plug 'hzchirs/vim-material'
 
   " syntax support
   Plug 'tomlion/vim-solidity'         " solidity
@@ -41,9 +44,37 @@ call plug#begin('~/.config/nvim/autoload')
 call plug#end()
 
 " theme
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme dracula
-set guicursor=n-v-c-i:block-Cursor
+"colorscheme night-owl
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"set guicursor=n-v-c-i:block-Cursor
+
+
+if has('nvim')
+  set termguicolors
+  set inccommand=nosplit
+endif
+
+" Dark
+set background=dark
+colorscheme vim-material
+
+" Palenight
+"let g:material_style='palenight'
+"set background=dark
+"colorscheme vim-material
+
+" Oceanic
+"let g:material_style='oceanic'
+"set background=dark
+"colorscheme vim-material
+"
+"" Light
+"set background=light
+"colorscheme vim-material
+
 
 " config
 syntax on
@@ -63,6 +94,7 @@ set number
 set hlsearch
 set ruler
 set cursorline
+
 highlight Comment ctermfg=green
 
 
@@ -252,6 +284,9 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "let g:lightline = {
 "      \ 'colorscheme': 'breezy',
 "      \ }
+"let g:lightline = { 'colorscheme': 'nightowl' }
+
+
 
 "let g:prettier#autoformat_require_pragma = 0
 "let g:prettier#autoformat = 1
