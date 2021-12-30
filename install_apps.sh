@@ -27,7 +27,7 @@ sudo apt install cmatrix -y      # for fun 🤟
 # -- no configuration needed apps w/ gui
 # sudo apt install discord                # for meetings
 # sudo apt install zoom                   # for facetime
-sudo apt install kdenlive -y               # video editing 📼
+# sudo apt install kdenlive -y               # video editing 📼
 # sudo apt install breeze                 # for having dark theme in kdenlive -> optional
 sudo apt install sqlitebrowser -y         # for sql dbs
 # sudo apt install geary -y                  # emails 📬 # no need in kde
