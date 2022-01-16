@@ -8,16 +8,18 @@ sudo chown -R berkay:berkay ./yay-git
 cd yay-git && makepkg -si
 
 sudo pacman -Rsn vim
-sudo pacman -Syy git
 # no need to zsh it's already installed
-sudo pacman -Syy curl neovim subversion tmux screenfetch obs-studio
+sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio 
 
 # install vscode
 yay -Sy google-chrome
 yay -Sy visual-studio-code-bin
+yay -Sy zoom
+yay -Sy discord
+yay -Sy miniconda
+# yay -Sy xampp # -> not sure about that
 
-
-echo "Manual Needed Apps: Discord, Zoom, Mega.nz, xampp, miniconda for python 3.9"
+echo "Manual Needed Apps: Mega.nz, miniconda for python 3.9"
 echo """
 manuel olarak çalıştırılması gereken komutlar:
   # -- oh my zsh run
