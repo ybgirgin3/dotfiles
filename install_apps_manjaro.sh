@@ -9,13 +9,12 @@ cd yay-git && makepkg -si
 
 sudo pacman -Rsn vim
 # no need to zsh it's already installed
-sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio 
+sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord
 
 # install vscode
 yay -Sy google-chrome
 yay -Sy visual-studio-code-bin
 yay -Sy zoom
-yay -Sy discord
 yay -Sy miniconda
 # yay -Sy xampp # -> not sure about that
 
