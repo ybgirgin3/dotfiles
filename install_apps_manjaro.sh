@@ -28,4 +28,5 @@ manuel olarak çalıştırılması gereken komutlar:
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   fnm install <lts-version-node>
   gh auth login
+  font: ttf-iosevka-11.2.6.zip
 """
