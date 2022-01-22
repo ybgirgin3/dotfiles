@@ -12,8 +12,8 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'jiangmiao/auto-pairs'
-  "Plug 'Yggdroot/indentLine'
-  Plug 'itchyny/lightline.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'ryanoasis/vim-devicons'         " icons for vim
 
@@ -23,14 +23,16 @@ call plug#begin('~/.config/nvim/autoload')
 
 
   Plug 'pangloss/vim-javascript'
+  Plug 'nanotech/jellybeans.vim'
+
 
   " themes
   " Plug 'morhetz/gruvbox'
-  Plug 'hzchirs/vim-material'
+  "Plug 'hzchirs/vim-material'
 
   " syntax support
-  Plug 'tomlion/vim-solidity'         " solidity
-  Plug 'epilande/vim-react-snippets'  " react
+  "Plug 'tomlion/vim-solidity'         " solidity
+  "Plug 'epilande/vim-react-snippets'  " react
 
   " post install (yarn install | npm install) then load plugin only for editing supported files
   "Plug 'prettier/vim-prettier', {
@@ -49,8 +51,10 @@ call plug#end()
 "colorscheme night-owl
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-"set guicursor=n-v-c-i:block-Cursor
+set guicursor=n-v-c-i:block-Cursor
 
+set background=dark
+colorscheme jellybeans
 
 if has('nvim')
   set termguicolors
@@ -58,8 +62,8 @@ if has('nvim')
 endif
 
 " Dark
-set background=dark
-colorscheme vim-material
+"set background=dark
+"colorscheme vim-material
 
 " Palenight
 "let g:material_style='palenight'
@@ -159,7 +163,7 @@ endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
@@ -281,10 +285,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-"let g:lightline = {
-"      \ 'colorscheme': 'breezy',
-"      \ }
-"let g:lightline = { 'colorscheme': 'nightowl' }
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
 
 
@@ -294,5 +297,4 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 " indentline
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']>
