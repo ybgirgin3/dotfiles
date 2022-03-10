@@ -3,28 +3,27 @@
 
 # use yay instead
 # configure yay
-#git clone https://aur.archlinux.org/yay-git.git
-#sudo chown -R berkay:berkay ./yay-git
-#cd yay-git && makepkg -si
+# git clone https://aur.archlinux.org/yay-git.git
+# sudo chown -R berkay:berkay ./yay-git
+# cd yay-git && makepkg -si
 
 sudo pacman -Rsn vim
 # no need to zsh it's already installed
-sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord
+sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord songrec zsh github-cli
 
-# install vscode
 yay -Sy google-chrome
 yay -Sy visual-studio-code-bin
 yay -Sy zoom
+yay -Sy miniconda
 yay -Sy slack-desktop
-#yay -Sy miniconda
-# yay -Sy xampp # -> not sure about that
 yay -Sy ttf-joypixels
+# yay -Sy xampp # -> not sure about that
 
 echo "Manual Needed Apps: Mega.nz, miniconda for python 3.9"
 echo """
 manuel olarak çalıştırılması gereken komutlar:
   # -- oh my zsh run
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # zsh extention
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
