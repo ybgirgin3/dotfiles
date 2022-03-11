@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/autoload')
 
 
   Plug 'pangloss/vim-javascript'
-  Plug 'nanotech/jellybeans.vim'
+  Plug 'gruvbox-community/gruvbox'
 
 
   " themes
@@ -54,7 +54,7 @@ call plug#end()
 set guicursor=n-v-c-i:block-Cursor
 
 set background=dark
-colorscheme jellybeans
+colorscheme gruvbox
 
 if has('nvim')
   set termguicolors
@@ -86,14 +86,12 @@ set ignorecase
 set smarttab
 set smartcase
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=2 tabstop=2
 set expandtab
 set title
 set autoindent
 set ai
 set si
-"set nowrap
 set number
 set hlsearch
 set ruler
@@ -129,7 +127,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -284,6 +282,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
