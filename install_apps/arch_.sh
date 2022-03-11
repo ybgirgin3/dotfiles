@@ -11,12 +11,17 @@ sudo pacman -Rsn vim
 # no need to zsh it's already installed
 sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord songrec zsh github-cli
 
+# applications
 yay -Sy google-chrome
 yay -Sy visual-studio-code-bin
 yay -Sy zoom
 yay -Sy miniconda
 yay -Sy slack-desktop
+
+# fonts
 yay -Sy ttf-joypixels
+yay -Sy nerd-fonts-fantasque-sans-mono
+
 # yay -Sy xampp # -> not sure about that
 
 echo "Manual Needed Apps: Mega.nz, miniconda for python 3.9"
