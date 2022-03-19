@@ -10,7 +10,12 @@ export ZSH="/home/berkay/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="miloshadzic"
-ZSH_THEME="berkay"
+# ZSH_THEME="berkay"
+ZSH_THEME="berkay2"
+# ZSH_THEME="elessar" # minimal renkler
+# ZSH_THEME="philthy" # kısa path 
+# ZSH_THEME="intika"  # saati var uzun path
+#ZSH_THEME="bigpath"   # uzun path neon renkler
 
 
 # Set list of themes to pick from when loading at random
@@ -122,14 +127,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias paradir="cd /home/berkay/code"
-alias para="conda activate job"
-alias dev="conda activate dev"
 alias mysqlrun="sudo /opt/lampp/manager-linux-x64.run"
 alias vim="nvim"
 alias autoclean="sudo pacman -R $(pacman -Qdtq)"
-
+#
 # fnm
 export PATH=/home/berkay/.fnm:$PATH
 eval "`fnm env`"
-
-
