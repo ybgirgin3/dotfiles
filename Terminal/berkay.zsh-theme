@@ -7,4 +7,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} 🔥"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"    
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[white]%} ❄ %{$reset_color%}"
 
-PROMPT='%{$fg_bold[blue]%}🌵%1~%{$reset_color%}%{$fg_bold[green]%}%{$reset_color%}$(git_prompt_info)%{$fg[green]%}⌚ %{$fg_bold[blue]%}%*%{$reset_color%} %{$fg_bold[blue]%}$%{$reset_color%} '
+hotpink="%F{161}"
+
+PROMPT='%{$fg_bold[hotpink]%}📍%1~%{$reset_color%}%{$fg_bold[green]%}%{$reset_color%}$(git_prompt_info)%{$fg[green]%} ~$ '
+RPROMPT='⌚ %{$fg_bold[blue]%}%*%{$reset_color%} %{$fg_bold[blue]%}%{$reset_color%} '
