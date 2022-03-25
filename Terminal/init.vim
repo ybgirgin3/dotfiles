@@ -10,22 +10,24 @@ call plug#begin('~/.config/nvim/autoload')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'jiangmiao/auto-pairs'
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'jiangmiao/auto-pairs'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'ryanoasis/vim-devicons'         " icons for vim
 
 
   Plug 'ap/vim-css-color'                            " Color previews for CSS
   Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+  Plug 'ayu-theme/ayu-vim'
+
 
   Plug 'pangloss/vim-javascript'
-  Plug 'gruvbox-community/gruvbox'
-
-
+  " Plug 'gruvbox-community/gruvbox'
+  "Plug 'chriskempson/base16-vim'
   " themes
   " Plug 'morhetz/gruvbox'
   "Plug 'hzchirs/vim-material'
@@ -53,35 +55,26 @@ call plug#end()
 
 set guicursor=n-v-c-i:block-Cursor
 
-set background=dark
-colorscheme gruvbox
+"colorscheme peachpuff
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 if has('nvim')
-  set termguicolors
+  "set termguicolors
   set inccommand=nosplit
 endif
 
-" Dark
-"set background=dark
-"colorscheme vim-material
-
-" Palenight
-"let g:material_style='palenight'
-"set background=dark
-"colorscheme vim-material
-
-" Oceanic
-"let g:material_style='oceanic'
-"set background=dark
-"colorscheme vim-material
-"
-"" Light
-"set background=light
-"colorscheme vim-material
-
-
-" config
 syntax on
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set ai
+set number
+set hlsearch
+set ruler
 set ignorecase
 set smarttab
 set smartcase
@@ -95,10 +88,10 @@ set si
 set number
 set hlsearch
 set ruler
-set cursorline
 
 highlight Comment ctermfg=green
 
+hi Visual term=reverse
 
 
 
@@ -283,6 +276,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
@@ -290,8 +285,8 @@ let g:lightline = {
 
 
 
-"let g:prettier#autoformat_require_pragma = 0
-"let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
