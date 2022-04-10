@@ -37,8 +37,8 @@ else
 end
 
 -- Move text up and down
-map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
-map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
+-- map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
+-- map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
 -- Standard Operations
 map("n", "<leader>w", "<cmd>w<CR>", opts)
@@ -63,9 +63,13 @@ map("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 
 -- NeoTree
 if utils.is_available "neo-tree.nvim" then
-  -- map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
   map("n", "<C-n>", "<cmd>Neotree toggle<CR>", opts)
   map("n", "<leader>n", "<cmd>Neotree focus<CR>", opts)
+end
+
+-- Formatter
+if utils.is_available "formatter.nvim" then
+  map("n", "<leader>f", "<cmd>Format<CR>", opts)
 end
 
 -- Dashboard

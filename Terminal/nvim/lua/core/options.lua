@@ -1,7 +1,8 @@
 local M = {}
-
 local utils = require "core.utils"
-local colorscheme = utils.user_plugin_opts "colorscheme"
+-- local colorscheme = utils.user_plugin_opts "colorscheme"
+-- local colorscheme = "ayu"
+local colorscheme = "base16-phd"
 
 local set = vim.opt
 
@@ -14,7 +15,7 @@ set.mouse = "a" -- Enable mouse support
 set.signcolumn = "yes" -- Always show the sign column
 set.foldmethod = "manual" -- Create folds manually
 set.completeopt = { "menuone", "noselect" } -- Options for insert mode completion
-set.colorcolumn = "99999" -- Fix for the indentline problem
+set.colorcolumn = "80" -- Fix for the indentline problem
 set.backup = false -- Disable making a backup file
 set.expandtab = true -- Enable the use of space in tab
 set.hidden = true -- Ignore unsaved buffers

@@ -368,6 +368,11 @@ local astro_plugins = {
 
   -- Get extra JSON schemas
   { "b0o/SchemaStore.nvim" },
+
+  -- themes
+  {"ayu-theme/ayu-vim"},
+  {"chriskempson/base16-vim"},
+
 }
 
 packer.startup {
