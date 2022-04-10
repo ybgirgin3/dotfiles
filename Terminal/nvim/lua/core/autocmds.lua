@@ -28,15 +28,6 @@ if utils.is_available "dashboard-nvim" and utils.is_available "bufferline.nvim" 
   ]]
 end
 
-if utils.is_available "formatter.nvim" then
-  vim.cmd[[
-  augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
-  augroup END
-  ]]
-end
-
 vim.cmd [[
   command! AstroUpdate lua require('core.utils').update()
 ]]

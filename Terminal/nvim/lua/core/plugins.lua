@@ -370,8 +370,6 @@ local astro_plugins = {
   { "b0o/SchemaStore.nvim" },
 
   -- themes
-  {"ayu-theme/ayu-vim"},
-  {"chriskempson/base16-vim"},
   {"fneu/breezy"}
 
 }
