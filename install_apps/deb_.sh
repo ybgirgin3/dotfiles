@@ -75,6 +75,12 @@ sudo apt install songrec -y
 
 # *** TERMINAL APPS RUN
 
+# -- install astrovim
+mkdir -p  ~/.config/nvim/
+git clone https://github.com/kabinspace/AstroVim ~/.config/nvim
+nvim +PackerSync
+
+
 # -- github cli run/login -> better with manually
 
 # github configuration
@@ -95,4 +101,6 @@ manuel olarak çalıştırılması gereken komutlar:
 
   fnm install <lts-version-node>
   gh auth login
+
+  !!!! GO TO http://neovimcraft.com/plugin/kabinspace/AstroVim/index.html to completely configure Astrovim
 """

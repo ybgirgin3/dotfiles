@@ -22,7 +22,11 @@ yay -Sy slack-desktop
 yay -Sy ttf-joypixels
 yay -Sy nerd-fonts-fantasque-sans-mono
 
-# yay -Sy xampp # -> not sure about that
+# install astrovim
+mkdir -p ~/.config/nvim
+git clone https://github.com/kabinspace/AstroVim ~/.config/nvim
+nvim +PackerSync
+
 
 echo "Manual Needed Apps: Mega.nz, miniconda for python 3.9"
 echo """
@@ -36,4 +40,7 @@ manuel olarak çalıştırılması gereken komutlar:
   gh auth login
   font: ttf-iosevka-11.2.6.zip
   move local.conf to /etc/fonts/local.conf
+  !!!! GO TO http://neovimcraft.com/plugin/kabinspace/AstroVim/index.html to completely configure Astrovim
+  
+
 """
