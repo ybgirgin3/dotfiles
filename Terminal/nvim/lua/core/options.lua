@@ -2,20 +2,25 @@ local M = {}
 local utils = require "core.utils"
 -- local colorscheme = utils.user_plugin_opts "colorscheme"
 -- local colorscheme = "ayu"
-local colorscheme = "base16-phd"
-
+-- local colorscheme = "base16-atelier-lakeside"
+local colorscheme = "breezy"
 local set = vim.opt
 
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
+-- my configuration # yusuf berkay girgin
+set.background = "light" -- for perfect breeze colors
+set.colorcolumn = "80" -- Fix for the indentline problem
+set.relativenumber = false -- Show relative numberline
+
+-- default
 set.fileencoding = "utf-8" -- File content encoding for the buffer
 set.spelllang = "en" -- Support US english
 set.clipboard = "unnamedplus" -- Connection to the system clipboard
-set.mouse = "a" -- Enable mouse support
+-- set.mouse = "a" -- Enable mouse support
 set.signcolumn = "yes" -- Always show the sign column
 set.foldmethod = "manual" -- Create folds manually
 set.completeopt = { "menuone", "noselect" } -- Options for insert mode completion
-set.colorcolumn = "80" -- Fix for the indentline problem
 set.backup = false -- Disable making a backup file
 set.expandtab = true -- Enable the use of space in tab
 set.hidden = true -- Ignore unsaved buffers
@@ -33,7 +38,6 @@ set.undofile = true -- Enable persistent undo
 set.writebackup = false -- Disable making a backup before overwriting a file
 set.cursorline = true -- Highlight the text line of the cursor
 set.number = true -- Show numberline
-set.relativenumber = false -- Show relative numberline
 set.wrap = false -- Disable wrapping of lines longer than the width of window
 set.conceallevel = 0 -- Show text normally
 set.cmdheight = 1 -- Number of screen lines to use for the command line

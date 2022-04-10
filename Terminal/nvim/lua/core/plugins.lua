@@ -372,6 +372,7 @@ local astro_plugins = {
   -- themes
   {"ayu-theme/ayu-vim"},
   {"chriskempson/base16-vim"},
+  {"fneu/breezy"}
 
 }
 
