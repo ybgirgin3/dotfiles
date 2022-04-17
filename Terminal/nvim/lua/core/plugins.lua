@@ -370,7 +370,17 @@ local astro_plugins = {
   { "b0o/SchemaStore.nvim" },
 
   -- themes
-  {"fneu/breezy"}
+  {"fneu/breezy"},
+
+  -- solarized theme
+  {'ishan9299/nvim-solarized-lua'},
+
+  -- github theme
+  {"projekt0n/github-nvim-theme"},
+
+  -- monokai
+  {"patstockwell/vim-monokai-tasty"}
+
 
 }
 

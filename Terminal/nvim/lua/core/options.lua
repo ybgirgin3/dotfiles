@@ -1,17 +1,15 @@
 local M = {}
 local utils = require "core.utils"
--- local colorscheme = utils.user_plugin_opts "colorscheme"
--- local colorscheme = "ayu"
--- local colorscheme = "base16-atelier-lakeside"
-local colorscheme = "breezy"
+local colorscheme = "vim-monokai-tasty"
 local set = vim.opt
 
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- my configuration # yusuf berkay girgin
-set.background = "light" -- for perfect breeze colors
+set.background = "dark" -- for perfect breeze colors
 set.colorcolumn = "80" -- Fix for the indentline problem
 set.relativenumber = false -- Show relative numberline
+-- set.guicursor=n-v-c-i:block-Cursor
 
 -- default
 set.fileencoding = "utf-8" -- File content encoding for the buffer
