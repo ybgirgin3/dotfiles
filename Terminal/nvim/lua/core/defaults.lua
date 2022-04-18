@@ -17,6 +17,7 @@ local config = {
   },
 
   enabled = {
+    transparent = true,
     bufferline = true,
     neo_tree = true,
     lualine = true,

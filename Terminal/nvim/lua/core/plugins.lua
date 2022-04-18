@@ -379,7 +379,9 @@ local astro_plugins = {
   {"projekt0n/github-nvim-theme"},
 
   -- monokai
-  {"patstockwell/vim-monokai-tasty"}
+  {"patstockwell/vim-monokai-tasty"},
+
+  {"xiyaowong/nvim-transparent"}
 
 
 }

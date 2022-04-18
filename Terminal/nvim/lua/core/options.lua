@@ -3,19 +3,21 @@ local utils = require "core.utils"
 local colorscheme = "vim-monokai-tasty"
 local set = vim.opt
 
+vim.g.transparent_enabled = true
+
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- my configuration # yusuf berkay girgin
 set.background = "dark" -- for perfect breeze colors
 set.colorcolumn = "80" -- Fix for the indentline problem
 set.relativenumber = false -- Show relative numberline
--- set.guicursor=n-v-c-i:block-Cursor
+
 
 -- default
 set.fileencoding = "utf-8" -- File content encoding for the buffer
 set.spelllang = "en" -- Support US english
 set.clipboard = "unnamedplus" -- Connection to the system clipboard
--- set.mouse = "a" -- Enable mouse support
+set.mouse = "a" -- Enable mouse support
 set.signcolumn = "yes" -- Always show the sign column
 set.foldmethod = "manual" -- Create folds manually
 set.completeopt = { "menuone", "noselect" } -- Options for insert mode completion

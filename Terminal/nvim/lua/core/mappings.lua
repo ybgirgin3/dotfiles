@@ -5,6 +5,7 @@ local utils = require "core.utils"
 local opts = { noremap = true, silent = true }
 local map = vim.api.nvim_set_keymap
 
+
 -- Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
