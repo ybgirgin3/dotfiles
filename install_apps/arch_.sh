@@ -21,6 +21,7 @@ yay -Sy slack-desktop
 # fonts
 yay -Sy ttf-joypixels
 yay -Sy nerd-fonts-fantasque-sans-mono
+yay -Sy ttf-comic-mono-git
 
 # install astrovim
 mkdir -p ~/.config/nvim
