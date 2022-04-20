@@ -32,4 +32,9 @@ vim.cmd [[
   command! AstroUpdate lua require('core.utils').update()
 ]]
 
+-- autoformatter autocmd section
+vim.cmd[[
+  autocmd BufWritePre *.js Neoformat
+]]
+
 return M

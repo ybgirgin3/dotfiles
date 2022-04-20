@@ -381,7 +381,10 @@ local astro_plugins = {
   -- monokai
   {"patstockwell/vim-monokai-tasty"},
 
-  {"xiyaowong/nvim-transparent"}
+  {"xiyaowong/nvim-transparent"},
+
+  {'sbdchd/neoformat'}
+
 
 
 }
