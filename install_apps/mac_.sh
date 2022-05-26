@@ -14,6 +14,8 @@ brew install gh
 brew install obs
 brew install vlc
 brew install --cask visual-studio-code
+brew install google-chrome
+
 
 
 echo """
