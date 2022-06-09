@@ -11,13 +11,25 @@ local astro_plugins = {
   -- Popup API
   ["nvim-lua/popup.nvim"] = {},
 
-  -- Indent detection
-  ["Darazaki/indent-o-matic"] = {
-    event = "BufReadPost",
+  -- zephyr
+  ["glepnir/zephyr-nvim"] = {
+    -- event = "VimEnter",
     config = function()
-      require("configs.indent-o-matic").config()
+      require('nvim-treesitter/nvim-treesitter').config()
     end,
   },
+
+  -- autoformat
+  ["averms/black-nvim"] = {},
+
+
+  -- Indent detection
+  --   ["Darazaki/indent-o-matic"] = {
+  --     event = "BufReadPost",
+  --     config = function()
+  --       require("configs.indent-o-matic").config()
+  --     end,
+  --   },
 
   -- Notification Enhancer
   ["rcarriga/nvim-notify"] = {
@@ -282,12 +294,12 @@ local astro_plugins = {
   },
 
   -- Smooth scrolling
-  ["declancm/cinnamon.nvim"] = {
-    event = { "BufRead", "BufNewFile" },
-    config = function()
-      require("configs.cinnamon").config()
-    end,
-  },
+  -- ["declancm/cinnamon.nvim"] = {
+  --   event = { "BufRead", "BufNewFile" },
+  --   config = function()
+  --     require("configs.cinnamon").config()
+  --   end,
+  -- },
 
   -- Smooth escaping
   ["max397574/better-escape.nvim"] = {
