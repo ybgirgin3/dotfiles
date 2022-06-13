@@ -16,11 +16,8 @@ for _, source in ipairs {
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then
-    error("Failed to load " .. source .. "\n\n" .. fault)
+    vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault)
   end
 end
 
-local polish = astronvim.user_plugin_opts("polish", nil, false)
-if type(polish) == "function" then
-  polish()
-end
+astronvim.conditional_func(astronvim.user_plugin_opts("polish", nil, false))

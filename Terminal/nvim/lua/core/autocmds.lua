@@ -93,10 +93,12 @@ if is_available "feline.nvim" then
     desc = "Reload feline on colorscheme change",
     group = "feline_setup",
     callback = function()
-      require("configs.feline").config()
+      package.loaded["configs.feline"] = nil
+      require "configs.feline"
     end,
   })
 end
 
-create_command("AstroUpdate", astronvim.update, { desc = "Update AstroNvim" })
+create_command("AstroUpdate", astronvim.updater.update, { desc = "Update AstroNvim" })
+create_command("AstroVersion", astronvim.updater.version, { desc = "Check AstroNvim Version" })
 create_command("ToggleHighlightURL", astronvim.toggle_url_match, { desc = "Toggle URL Highlights" })

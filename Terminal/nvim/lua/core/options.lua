@@ -1,14 +1,10 @@
--- local default = "default_theme"
--- local colorscheme = astronvim.user_plugin_opts("colorscheme", default, false)
--- if not vim.tbl_contains(vim.fn.getcompletion("", "color"), colorscheme) then
--- 	colorscheme = default
--- end
--- vim.api.nvim_command(("colorscheme %s"):format(colorscheme))
-
--- vim.api.nvim_command(("colorscheme %s"):format("vim-monokai-tasty"))
--- vim.api.nvim_command(("colorscheme %s"):format("aylin"))
--- vim.api.nvim_command(("colorscheme %s"):format("kiss"))
+local colorscheme = astronvim.user_plugin_opts("colorscheme", nil, false)
+vim.api.nvim_command(
+  "colorscheme "
+    .. (vim.tbl_contains(vim.fn.getcompletion("", "color"), colorscheme) and colorscheme or "default_theme")
+)
 vim.api.nvim_command(("colorscheme %s"):format("zephyr"))
+
 
 astronvim.vim_opts(astronvim.user_plugin_opts("options", {
   opt = {
@@ -28,7 +24,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     number = true, -- Show numberline
     preserveindent = true, -- Preserve indent structure as much as possible
     pumheight = 10, -- Height of the pop up menu
-    relativenumber = false, -- Show relative numberline
+    relativenumber = true, -- Show relative numberline
     scrolloff = 8, -- Number of lines to keep above and below the cursor
     shiftwidth = 2, -- Number of space inserted for indentation
     showmode = false, -- Disable showing modes in command line
