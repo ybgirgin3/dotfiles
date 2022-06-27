@@ -1,6 +1,6 @@
 local astro_plugins = {
 
-  -- custom theme
+    -- custom theme
   ["glepnir/zephyr-nvim"] = {},
 
   -- Plugin manager
@@ -252,7 +252,7 @@ local astro_plugins = {
   },
 
   -- Terminal
-  ["akinsho/nvim-toggleterm.lua"] = {
+  ["akinsho/toggleterm.nvim"] = {
     cmd = "ToggleTerm",
     module = { "toggleterm", "toggleterm.terminal" },
     config = function()
@@ -286,12 +286,12 @@ local astro_plugins = {
   },
 
   -- Smooth scrolling
-  ["declancm/cinnamon.nvim"] = {
-    event = { "BufRead", "BufNewFile" },
-    config = function()
-      require "configs.cinnamon"
-    end,
-  },
+  -- ["declancm/cinnamon.nvim"] = {
+  --   event = { "BufRead", "BufNewFile" },
+  --   config = function()
+  --     require "configs.cinnamon"
+  --   end,
+  -- },
 
   -- Smooth escaping
   ["max397574/better-escape.nvim"] = {

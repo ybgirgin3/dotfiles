@@ -1,11 +1,3 @@
-local colorscheme = astronvim.user_plugin_opts("colorscheme", nil, false)
-vim.api.nvim_command(
-  "colorscheme "
-    .. (vim.tbl_contains(vim.fn.getcompletion("", "color"), colorscheme) and colorscheme or "default_theme")
-)
-vim.api.nvim_command(("colorscheme %s"):format("zephyr"))
-
-
 astronvim.vim_opts(astronvim.user_plugin_opts("options", {
   opt = {
     backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
@@ -20,11 +12,11 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     ignorecase = true, -- Case insensitive searching
     laststatus = 3, -- globalstatus
     lazyredraw = true, -- lazily redraw screen
-    -- mouse = "a", -- Enable mouse support
+    mouse = "a", -- Enable mouse support
     number = true, -- Show numberline
     preserveindent = true, -- Preserve indent structure as much as possible
     pumheight = 10, -- Height of the pop up menu
-    relativenumber = true, -- Show relative numberline
+    -- relativenumber = true, -- Show relative numberline
     scrolloff = 8, -- Number of lines to keep above and below the cursor
     shiftwidth = 2, -- Number of space inserted for indentation
     showmode = false, -- Disable showing modes in command line
@@ -67,3 +59,10 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     loaded_vimballPlugin = true, -- disable vimball
   },
 }))
+
+local colorscheme = astronvim.user_plugin_opts("colorscheme", nil, false)
+vim.api.nvim_command(
+  "colorscheme "
+    .. (vim.tbl_contains(vim.fn.getcompletion("", "color"), colorscheme) and colorscheme or "default_theme")
+)
+vim.api.nvim_command(("colorscheme %s"):format("zephyr"))

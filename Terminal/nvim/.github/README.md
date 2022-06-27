@@ -43,11 +43,13 @@ AstroNvim is an aesthetic and feature-rich neovim config that is extensible and 
 - Syntax highlighting with [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Formatting and linting with [Null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Language Server Protocol with [Native LSP](https://github.com/neovim/nvim-lspconfig)
+- Buffer Line with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
 ## ⚡ Requirements
 
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [Neovim 0.7+](https://github.com/neovim/neovim/releases/tag/v0.7.0)
+- A clipboard tool is necessary for the integration with the system clipboard (see [`:help clipboard-tool`](https://neovim.io/doc/user/provider.html#clipboard-tool) for supported solutions)
 - Terminal with true color support (for the default theme, otherwise it is dependent on the theme you are using)
 - Optional Requirements:
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - live grep telescope search (`<leader>fw`)
