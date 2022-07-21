@@ -26,6 +26,12 @@ maps.n["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" }
 maps.n["<C-q>"] = { "<cmd>q!<cr>", desc = "Force quit" }
 maps.n["Q"] = "<Nop>"
 
+
+-- tab management
+maps.n["<A-j>"] = { "<cmd>tabprevious<cr>", desc = "Left Tab" }
+maps.n["<A-k>"] = { "<cmd>tabnext<cr>", desc = "Right Tab" }
+
+
 -- Packer
 maps.n["<leader>pc"] = { "<cmd>PackerCompile<cr>", desc = "Packer Compile" }
 maps.n["<leader>pi"] = { "<cmd>PackerInstall<cr>", desc = "Packer Install" }
@@ -150,7 +156,12 @@ end
 if is_available "nvim-lsp-installer" then
   maps.n["<leader>li"] = { "<cmd>LspInfo<cr>", desc = "LSP information" }
   maps.n["<leader>lI"] = { "<cmd>LspInstallInfo<cr>", desc = "LSP installer" }
+  
+  -- jump to definition
+  maps.n["<leader>vd"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Jump the Definition over LSP"}
 end
+
+
 
 -- Smart Splits
 if is_available "smart-splits.nvim" then

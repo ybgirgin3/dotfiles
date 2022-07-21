@@ -3,6 +3,10 @@ local astro_plugins = {
     -- custom theme
   ["glepnir/zephyr-nvim"] = {},
 
+  ["doums/darcula"] = {},
+
+  ['martinsione/darkplus.nvim'] = {},
+
   -- Plugin manager
   ["wbthomason/packer.nvim"] = {},
 
