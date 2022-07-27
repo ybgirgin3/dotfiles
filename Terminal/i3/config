@@ -22,6 +22,7 @@ font pango:LigaSFMonoNerdFont 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id picom -CGb
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -184,7 +185,7 @@ bindsym $mod+r mode "resize"
 set $bg     #2c2c2e
 set $fg     #9f9f9f
 set $hi     #efef8f
-set $ac     #ff0000
+set $ac     #006f00
 set $tx     #040404
 set $ia     #8f8f8f
 set $be     #8faf9f
@@ -205,15 +206,31 @@ bar {
         # status_command i3status
         status_command exec /home/berkay/Public/i3status/i3status/mybar.sh
         position top
+
 }
 
 
 #for_window [class=".*"] border pixel 2
-for_window [class="^.*"] border pixel 1
-for_window [title="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 3
 
-gaps outer 4
-gaps inner 4
+smart_gaps on
+smart_gaps inverse_outer
+
+# Activate smart borders (always)
+smart_borders on
+
+# Activate smart borders (only when there are effectively no gaps)
+smart_borders no_gaps
+# Hide edge borders only if there is one window with no gaps
+hide_edge_borders smart_no_gaps
+
+border_radius 5
+
+# gaps outer 4
+# gaps inner 4
+gaps inner 14
+gaps outer 10
 
 
 
