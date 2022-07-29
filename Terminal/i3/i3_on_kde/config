@@ -241,7 +241,7 @@ client.focused              $ac        $ac         $tx
 # finds out, if available)
 
 bar {
-        # status_command i3status
+        status_command i3status
         # status_command exec /home/berkay/.config/i3status/mybar.sh
         position top
 
