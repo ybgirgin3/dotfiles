@@ -9,7 +9,7 @@
 
 sudo pacman -Rsn vim
 # no need to zsh it's already installed
-sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord songrec zsh github-cli
+sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord songrec zsh github-cli lazygit
 
 # applications
 yay -Sy google-chrome
@@ -23,10 +23,13 @@ yay -Sy ttf-joypixels
 yay -Sy nerd-fonts-fantasque-sans-mono
 yay -Sy ttf-comic-mono-git
 
+
 # install astrovim
 mkdir -p ~/.config/nvim
 git clone https://github.com/kabinspace/AstroVim ~/.config/nvim
 nvim +PackerSync
+
+
 
 
 echo "Manual Needed Apps: Mega.nz, miniconda for python 3.9"
@@ -42,6 +45,8 @@ manuel olarak çalıştırılması gereken komutlar:
   font: ttf-iosevka-11.2.6.zip
   move local.conf to /etc/fonts/local.conf
   !!!! GO TO http://neovimcraft.com/plugin/kabinspace/AstroVim/index.html to completely configure Astrovim
+
+  add aliases to zsh
   
 
 """
