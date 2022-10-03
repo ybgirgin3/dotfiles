@@ -53,6 +53,7 @@ M.load_default_options = function()
     shadafile = join_paths(get_cache_dir(), "lvim.shada"),
     scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor.
     sidescrolloff = 8, -- minimal number of screen lines to keep left and right of the cursor.
+    guicursor = "i:block",
   }
 
   ---  SETTINGS  ---
