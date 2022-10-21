@@ -31,20 +31,25 @@ yay -Sy ttf-joypixels
 yay -Sy nerd-fonts-fantasque-sans-mono
 #yay -Sy ttf-comic-mono-git
 
-# install lunarvim
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ 
 
 echo "Manual Needed Apps: Mega.nz, miniconda"
 echo """
 manuel olarak çalıştırılması gereken komutlar:
-  # -- oh my zsh run
-  # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # zsh extention
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  fnm install <lts-version-node>
-  gh auth login
-  font: ttf-iosevka-11.2.6.zip
+  zsh theme /Terminal/zsh/daviasmara.zshtheme
+
   move local.conf to /etc/fonts/local.conf
+
+  # most used alias
+  alias yzt="ssh -Y <ip>"
+  alias paradir="cd /home/berkay/Documents/"
+  alias vim="/home/berkay/.local/bin/lvim"
+  alias p="python3"
 
 """

@@ -60,7 +60,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-
 echo "Manual Needed Apps: Discord, Zoom, Mega.nz, xampp, miniconda for python 3.9"
 echo """
 manuel olarak çalıştırılması gereken komutlar:
@@ -68,6 +67,7 @@ manuel olarak çalıştırılması gereken komutlar:
   # zsh extention
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  zsh theme /Terminal/zsh/daviasmara.zshtheme
 
   # brew zsh configuration
   # add these lines to .zshrc
