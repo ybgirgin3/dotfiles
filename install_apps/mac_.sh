@@ -8,13 +8,26 @@ brew install btop
 brew install wget
 brew install node
 brew install gh
+brew install neovim
+brew install tmux
+brew install curl
+
 
 
 # install apps with gui
+brew install unnaturalscrollwheels
+brew install rectangle
+brew install telegram-desktop
+brew install iterm2
 brew install obs
 brew install vlc
-brew install --cask visual-studio-code
+brew install visual-studio-code
 brew install google-chrome
+brew install notion
+brew install postman
+brew install opera
+brew install zoom
+
 
 
 
