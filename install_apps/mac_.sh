@@ -33,6 +33,7 @@ brew install zoom
 
 echo """
 # download miniconda from anaconda site and install it without sudo 🥲
+# install api-dog as a alternative to postman is really good
 
 
 # configure github-cli
