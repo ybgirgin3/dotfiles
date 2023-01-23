@@ -1,25 +1,29 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/berkay/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="headline"
-ZSH_THEME="021011"
-
-
-
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="miloshadzic"
-# ZSH_THEME="berkay"
-# ZSH_THEME="elessar" # minimal renkler
-# ZSH_THEME="philthy" # kısa path 
-# ZSH_THEME="intika"  # saati var uzun path
-#ZSH_THEME="bigpath"   # uzun path neon renkler
+# ZSH_THEME="daivasmara"
+# ZSH_THEME="cyberpunk"
+# ZSH_THEME="clean"
+# ZSH_THEME="lambda-mod"
+#ZSH_THEME="agkozak"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="punctual"
+# ZSH_THEME="kayid"
+#ZSH_THEME="kafeitu"
 
 
 # Set list of themes to pick from when loading at random
@@ -82,10 +86,8 @@ ZSH_THEME="021011"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting themes)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting themes rust python fzf vi-mode)
 
-#ZSH_COLORIZE_TOOL=chroma
-#ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,24 +117,58 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+export EDITOR='vim'
+alias paradir="cd /home/berkay/Documents/"
+#alias vim="/home/berkay/.local/bin/lvim"
+alias lvim="/home/berkay/.local/bin/lvim"
+alias vim="nvim"
+
+
+# python
+alias p="python"
+alias python3="python"
+
+# rust
+alias car="cargo"
+alias r="run"
+alias b="build"
+alias c="check"
+
+
+alias lg="/home/linuxbrew/.linuxbrew/Cellar/lazygit/0.35/bin/lazygit"
+alias cat="rich"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/berkay/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/berkay/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/berkay/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/berkay/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/berkay/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/berkay/.miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/berkay/miniconda3/bin:$PATH"
+        export PATH="/home/berkay/.miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-alias paradir="cd /home/berkay/Documents"
-alias mysqlrun="sudo /opt/lampp/manager-linux-x64.run"
-alias vim="nvim"
-alias autoclean="sudo pacman -R $(pacman -Qdtq)"
-source /opt/anaconda/bin/activate
 conda activate ML
+alias testenv="conda activate AIConsoleTest"
+alias personalenv="conda activate _self"
+
+
+# fnm
+export PATH=/home/berkay/.fnm:$PATH
+eval "`fnm env`"
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export LAMBDA_MOD_N_DIR_LEVELS=2
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
