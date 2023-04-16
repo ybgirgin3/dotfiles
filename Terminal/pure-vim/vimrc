@@ -1,0 +1,166 @@
+" Specify a directory for plugins
+call plug#begin('~/.config/nvim/autoload')
+
+" Make sure you use single quotes
+  Plug 'junegunn/vim-easy-align'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'ryanoasis/vim-devicons'         " icons for vim
+  Plug 'jremmen/vim-ripgrep'
+
+ " Initialize plugin system
+call plug#end()
+
+let mapleader = " " " map leader to Space
+set guicursor=n-v-c-i:block-Cursor
+
+"colorscheme peachpuff
+colorscheme koehler
+"set termguicolors     " enable true colors support
+"set background=dark
+
+"if has('nvim')
+"  "set termguicolors
+"  set inccommand=nosplit
+"endif
+
+syntax on
+" backup to ~/.tmp
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set ai
+set number
+set hlsearch
+set ruler
+set ignorecase
+set smarttab
+set smartcase
+set expandtab
+set autoindent
+set ai
+set si
+set number
+set hlsearch
+set ruler
+
+highlight Comment ctermfg=green
+
+hi Visual term=reverse
+
+
+" NERDTREE
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>e :NERDTree<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>a :NERDTreeFind<CR>
+let g:NERDTreeWinPos = "right"
+
+" Fuzzy Search
+nnoremap <leader>f :FZF<CR>
+
+
+
+" fzf config
+nnoremap <leader>p :Files<cr>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{tf,yml,yaml,vim,viml,tsx,ts,js,jsx,json,php,md,styl,pug,jade,html,config,py,cpp,c,go,hs,rb,conf,graphql,gql,sql,proto}"
+  \ -g "!{.config,.git,node_modules,vendor,yarn.lock,*.sty,*.bst,build,dist,output}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command . shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* FU call fzf#vim#grep(g:rg_command . '-m1 ' . shellescape(<q-args>), 1, <bang>0)
+
+function! GotoDefinition()
+  let n = search("\\<".expand("<cword>")."\\>[^(]*([^)]*)\\s*\\n*\\s*{")
+endfunction
+
+nnoremap <leader>g :GotoDefinition<CR>
+
+
+
+nnoremap <leader>Left :tabprevious<CR>
+nnoremap <leader>Right :tabnext<CR>
+
+" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
+" unicode characters in the file autoload/float.vim
+set encoding=utf-8
+
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=1
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat = 1
+
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!*.{min.js,swp,o,zip}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+" indentline
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']>
+
+"fix python indentation error
+let g:python_recommended_style = 0
+
