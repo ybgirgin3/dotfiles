@@ -11,7 +11,7 @@ brew install gh
 brew install neovim
 brew install tmux
 brew install curl
-
+brew install neofetch
 
 
 # install apps with gui
@@ -27,22 +27,4 @@ brew install notion
 brew install postman
 brew install opera
 brew install zoom
-
-
-
-
-echo """
-# download miniconda from anaconda site and install it without sudo 🥲
-# install api-dog as a alternative to postman is really good
-
-
-# configure github-cli
-  gh auth login
-
-
-# install powerline10k
-brew install romkatv/powerlevel10k/powerlevel10k\
-   echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-
-"""
 
