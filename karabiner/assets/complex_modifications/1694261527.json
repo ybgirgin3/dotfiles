@@ -1,11 +1,11 @@
 {
-  "title": "Mouse full emulation with right command super fast",
+  "title": "Mouse full emulation with left_option and left_shift super fast",
   "maintainers": [
-    "maxdzyubak"
+    "Bekocan"
   ],
   "rules": [
     {
-      "description": "Mouse full emulation with right command super fast",
+      "description": "Mouse full emulation with left_option and left_shift super fast",
       "manipulators": [
         {
           "from": {
