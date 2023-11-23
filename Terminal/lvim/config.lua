@@ -6,6 +6,8 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.relativenumber = true
+vim.opt.cursorline = false
+
 
 -- general
 lvim.log.level = "info"
@@ -34,7 +36,8 @@ lvim.keys.normal_mode["<D-s>"] = ":w<cr>"
 
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
-lvim.colorscheme = 'desert'
+lvim.colorscheme = 'peachpuff'
+-- lvim.colorscheme = 'peachpuff-dark'
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -114,16 +117,23 @@ lvim.plugins = {
 
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 lvim.autocommands = {
+  {
+    { "ColorScheme" },
     {
-        {"ColorScheme"},
-        {
-            pattern = "*",
-            callback = function()
-                vim.api.nvim_set_hl(0, "Normal", {bg="#000000", underline=false, bold=true})
-            end,
-        }
-    }
+      pattern = "*",
+      callback = function()
+        -- change `Normal` to the group you want to change
+        -- and `#ffffff` to the color you want
+        -- see `:h nvim_set_hl` for more options
+        vim.api.nvim_set_hl(0, "Normal", { bg = "#111111", underline = false, bold = true })
+        vim.api.nvim_set_hl(0, "Comment", { fg = "#4caf50", underline = false, bold = true })
+        vim.api.nvim_set_hl(0, "Pmenu", { fg = "gray", bg = 'gray', underline = false, bold = true })
+      end,
+    },
+  },
 }
+-- ctermfg=White ctermbg=Yellow cterm=bold
+
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
 --   callback = function()
