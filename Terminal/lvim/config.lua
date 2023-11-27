@@ -6,7 +6,7 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.relativenumber = true
-vim.opt.cursorline = false
+-- vim.opt.cursorline = false
 
 
 -- general
@@ -28,7 +28,7 @@ lvim.keys.insert_mode["<A-j>"] = ""
 lvim.keys.insert_mode["<A-k>"] = ""
 
 -- -- Change theme settings
-lvim.colorscheme = 'peachpuff'
+lvim.colorscheme = 'onedark'
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -71,31 +71,46 @@ code_actions.setup({
 })
 
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
-lvim.autocommands = {
-  {
-    { "ColorScheme" },
-    {
-      pattern = "*",
-      callback = function()
-        -- change `Normal` to the group you want to change
-        -- and `#ffffff` to the color you want
-        -- see `:h nvim_set_hl` for more options
-        vim.api.nvim_set_hl(0, "Normal", { bg = "#111111", underline = false, bold = true })
-        vim.api.nvim_set_hl(0, "Comment", { fg = "#4caf50", underline = false, bold = true })
-        vim.api.nvim_set_hl(0, "Pmenu", { fg = "gray", bg = 'gray', underline = false, bold = true })
-      end,
-    },
-  },
-}
+-- lvim.autocommands = {
+--   {
+--     { "ColorScheme" },
+--     {
+--       pattern = "*",
+--       callback = function()
+--         -- change `Normal` to the group you want to change
+--         -- and `#ffffff` to the color you want
+--         -- see `:h nvim_set_hl` for more options
+--         vim.api.nvim_set_hl(0, "Normal", { bg = "#000000", fg = "#ff0000", underline = false })
+--         vim.api.nvim_set_hl(0, "Comment", { fg = "#4caf50", underline = false, bold = true })
+--       end,
+--     },
+--   },
+-- }
 
 -- DEBUGGING
 -- install plugins
 lvim.plugins = {
-  "ChristianChiarulli/swenv.nvim",
-  "stevearc/dressing.nvim",
-  "mfussenegger/nvim-dap-python",
-  "nvim-neotest/neotest",
-  "nvim-neotest/neotest-python",
+  -- for debug
+    "ChristianChiarulli/swenv.nvim",
+    "stevearc/dressing.nvim",
+    "mfussenegger/nvim-dap-python",
+    "nvim-neotest/neotest",
+    "nvim-neotest/neotest-python",
+
+   -- colorscheme
+    "patstockwell/vim-monokai-tasty",
+    {"navarasu/onedark.nvim",
+      config = function ()
+          require('onedark').setup({
+              style = 'deep'
+              -- style = 'warm'
+              -- style = 'warmer'
+              -- style = 'darker'
+              -- style = 'dark'
+          })
+          require('onedark').load()
+      end
+    }
 }
 
 -- automatically install python syntax highlighting
@@ -104,9 +119,6 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 -- setup formatting
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup { { name = "black" }, }
-
 lvim.log.level = "info"
 lvim.format_on_save = {
 	enabled = true,
