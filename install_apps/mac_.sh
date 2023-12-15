@@ -18,7 +18,7 @@ brew install karabiner-elements
 brew install fork
 brew install orbstack
 brew install iterm2
-brew install alacritty
+# brew install alacritty
 brew install obs
 brew install vlc
 brew install visual-studio-code
@@ -26,8 +26,8 @@ brew install google-chrome
 brew install notion
 brew install postman
 brew install apidog
-brew install opera
-brew install zoom
+# brew install opera
+# brew install zoom
 
 # manual installation requiring apps
 echo "OneMenu => alternative to rectangle"
