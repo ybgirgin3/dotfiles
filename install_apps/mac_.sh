@@ -29,7 +29,9 @@ brew install apidog
 brew install opera
 brew install zoom
 
+
 # manual installation requiring apps
+echo "karabiner-elements settings is in: https://karabiner-elements.pqrs.org/docs/getting-started/installation/#install-karabiner-elements"
 echo "OneMenu => alternative to rectangle"
 echo "Mos => mouse scroll behaviour change"
 echo "pycharm and webstore => i have licence of intellij"
