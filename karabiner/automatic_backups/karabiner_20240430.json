@@ -18,14 +18,17 @@
                 },
                 "rules": [
                     {
-                        "description": "Tab tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
+                        "description": "Change left_option + hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -41,7 +44,10 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -57,7 +63,10 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -73,7 +82,10 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -90,7 +102,7 @@
             },
             "devices": [
                 {
-                    "disable_built_in_keyboard_if_exists": false,
+                    "disable_built_in_keyboard_if_exists": true,
                     "fn_function_keys": [],
                     "identifiers": {
                         "is_keyboard": true,
@@ -216,7 +228,7 @@
                     "treat_as_built_in_keyboard": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": true,
+                    "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
                     "identifiers": {
                         "is_keyboard": true,
@@ -316,34 +328,6 @@
                             ]
                         }
                     ],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 50504,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 50504,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
             ],
