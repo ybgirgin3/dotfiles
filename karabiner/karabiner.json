@@ -18,14 +18,14 @@
                 },
                 "rules": [
                     {
-                        "description": "Tab tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
+                        "description": "left_control tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -41,7 +41,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -57,7 +57,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -73,7 +73,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "tab"
+                                            "left_control"
                                         ]
                                     }
                                 },
