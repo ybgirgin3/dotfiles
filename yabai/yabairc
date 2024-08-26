@@ -27,9 +27,9 @@ yabai -m config top_padding 10
 yabai -m config bottom_padding 10
 yabai -m config left_padding 10
 yabai -m config right_padding 10
-yabai -m config window_gap 10
+yabai -m config window_gap 5
 
-yabai -m config insert_feedback_color 0xffd65d0e
+yabai -m config insert_feedback_color 0xfffff
 
 # Unmanaged apps
 app_titles="(Copy|Bin|About This Mac|Info|Finder Preferences|Preferences"
@@ -42,7 +42,7 @@ app_names+="|Stats|SteelSeries GG Client|System Preferences|System Settings"
 app_names+="|Tailscale|VLC)$"
 yabai -m rule --add app="${app_names}" manage=off
 
-intellij_apps='^(IntelliJ IDEA|RubyMine|GoLand)$'
+intellij_apps='^(IntelliJ IDEA|RubyMine|GoLand|PyCharm)$'
 yabai -m rule --add \
     --label="disable intellij window management" \
     app="${intellij_apps}" manage=off
