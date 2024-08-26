@@ -15,9 +15,10 @@ brew install neofetch
 brew install karabiner-elements
 
 # install apps with gui
-brew install fork
+# brew install fork
 brew install orbstack
-brew install iterm2
+# brew install iterm2
+brew install wezterm
 # brew install alacritty
 brew install obs
 brew install vlc
@@ -34,5 +35,4 @@ brew install apidog
 echo "karabiner-elements settings is in: https://karabiner-elements.pqrs.org/docs/getting-started/installation/#install-karabiner-elements"
 echo "OneMenu => alternative to rectangle"
 echo "Mos => mouse scroll behaviour change"
-echo "pycharm and webstore => i have licence of intellij"
-echo "Arc Browser => "
+echo "Arc Browser => best browser for productivity"
