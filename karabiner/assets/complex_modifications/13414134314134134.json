@@ -1,15 +1,15 @@
 {
-  "title": "left_control basılıyken hjkl kombinasyonlarını ok tuşlarına remap et",
+  "title": "right_command basılıyken hjkl kombinasyonlarını ok tuşlarına remap et",
   "rules": [
     {
-      "description": "left_control tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
+      "description": "right_command tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "h",
             "modifiers": {
-              "mandatory": ["left_control"]
+              "mandatory": ["right_command"]
             }
           },
           "to": [
@@ -23,7 +23,7 @@
           "from": {
             "key_code": "j",
             "modifiers": {
-              "mandatory": ["left_control"]
+              "mandatory": ["right_command"]
             }
           },
           "to": [
@@ -37,7 +37,7 @@
           "from": {
             "key_code": "k",
             "modifiers": {
-              "mandatory": ["left_control"]
+              "mandatory": ["right_command"]
             }
           },
           "to": [
@@ -51,7 +51,7 @@
           "from": {
             "key_code": "l",
             "modifiers": {
-              "mandatory": ["left_control"]
+              "mandatory": ["right_command"]
             }
           },
           "to": [

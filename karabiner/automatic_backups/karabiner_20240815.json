@@ -18,14 +18,14 @@
                 },
                 "rules": [
                     {
-                        "description": "right_command tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
+                        "description": "left_control tuşuna basılıyken hjkl tuşlarını ok tuşlarına emüle et",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -41,7 +41,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -57,7 +57,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -73,7 +73,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -107,7 +107,27 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "right_command"
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_forward"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "up_arrow"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "up_arrow"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_shift"
                                 }
                             ]
                         }
@@ -125,7 +145,18 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        }
+                    ],
                     "treat_as_built_in_keyboard": false
                 },
                 {
@@ -255,7 +286,7 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "right_command"
+                                    "key_code": "left_option"
                                 }
                             ]
                         }
@@ -313,31 +344,6 @@
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 591,
-                        "vendor_id": 1452
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "right_command"
-                                }
-                            ]
-                        }
-                    ],
                     "treat_as_built_in_keyboard": false
                 }
             ],
