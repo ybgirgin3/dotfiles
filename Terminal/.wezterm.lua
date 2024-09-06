@@ -22,7 +22,7 @@ config = {
   background = {
     {
       source = {
-        File = "/Users/yusufberkaygirgin/Pictures/terminal_background.jpg",
+        File = "/Users/yusufberkaygirgin/Public/Scripts/dotfiles/Terminal/terminal_background.jpg",
       },
       hsb = {
         hue = 1.0,
