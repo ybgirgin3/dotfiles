@@ -8,32 +8,33 @@
 # cd yay-git && makepkg -si
 
 sudo pacman -S base-devel
-sudo pacman -Rsn vim
+# sudo pacman -Rsn vim
 # no need to zsh it's already installed
-sudo pacman -Syy git wget curl neovim subversion tmux screenfetch obs-studio discord songrec github-cli lazygit
+sudo pacman -Syy wget curl subversion 
 
 # yay comes with Endeavours OS but not with the manjaro
-sudo pacman -Sy yay
+# sudo pacman -Sy yay
 
-# applications
-yay -Sy google-chrome
+# application
+# yay -Sy google-chrome
 yay -Sy visual-studio-code-bin
-yay -Sy kitty
-yay -Sy notion-app
-yay -Sy btop
-yay -Sy nvtop  # it will only run if you have nvidia gpu and your drivers are installed
+yay -Sy apidog-bin
+# yay -Sy kitty
+# yay -Sy notion-app
+# yay -Sy btop
+# yay -Sy nvtop  # it will only run if you have nvidia gpu and your drivers are installed
 #yay -Sy zoom
 #yay -Sy miniconda
 #yay -Sy slack-desktop
 
 # fonts
-yay -Sy ttf-joypixels
-yay -Sy nerd-fonts-fantasque-sans-mono
+# yay -Sy ttf-joypixels
+# yay -Sy nerd-fonts-fantasque-sans-mono
 #yay -Sy ttf-comic-mono-git
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
  
 
 echo "Manual Needed Apps: Mega.nz, miniconda"
